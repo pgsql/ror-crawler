@@ -1,0 +1,89 @@
+<h1>Listing configurations</h1>
+
+<table>
+  <tr>
+    <th>Company name</th>
+    <th>Ats</th>
+    <th>Duns</th>
+    <th>Map frequency</th>
+    <th>Map day of week</th>
+    <th>Date created</th>
+    <th>Date modified</th>
+    <th>Last run</th>
+    <th>Time of last run</th>
+    <th>No of times run</th>
+    <th>First time</th>
+    <th>Has next</th>
+    <th>Job listing option</th>
+    <th>Active</th>
+    <th>Save path</th>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Login</th>
+    <th>Password</th>
+    <th>Worker</th>
+    <th>Create csv</th>
+    <th>Job name</th>
+    <th>Working time</th>
+    <th>Location</th>
+    <th>Organization name</th>
+    <th>Department creation</th>
+    <th>Brieff description</th>
+    <th>Detailed description</th>
+    <th>Job requirments</th>
+    <th>Addition details</th>
+    <th>How to apply</th>
+    <th>Link</th>
+    <th>Save html blob</th>
+    <th>Save html file</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @configurations.each do |configuration| %>
+  <tr>
+    <td><%= configuration.company_name %></td>
+    <td><%= configuration.ats %></td>
+    <td><%= configuration.duns %></td>
+    <td><%= configuration.map_frequency %></td>
+    <td><%= configuration.map_day_of_week %></td>
+    <td><%= configuration.date_created %></td>
+    <td><%= configuration.date_modified %></td>
+    <td><%= configuration.last_run %></td>
+    <td><%= configuration.time_of_last_run %></td>
+    <td><%= configuration.no_of_times_run %></td>
+    <td><%= configuration.first_time %></td>
+    <td><%= configuration.has_next %></td>
+    <td><%= configuration.job_listing_option %></td>
+    <td><%= configuration.active %></td>
+    <td><%= configuration.save_path %></td>
+    <td><%= configuration.title %></td>
+    <td><%= configuration.url %></td>
+    <td><%= configuration.login %></td>
+    <td><%= configuration.password %></td>
+    <td><%= configuration.worker %></td>
+    <td><%= configuration.create_csv %></td>
+    <td><%= configuration.job_name %></td>
+    <td><%= configuration.working_time %></td>
+    <td><%= configuration.location %></td>
+    <td><%= configuration.organization_name %></td>
+    <td><%= configuration.department_creation %></td>
+    <td><%= configuration.brieff_description %></td>
+    <td><%= configuration.detailed_description %></td>
+    <td><%= configuration.job_requirments %></td>
+    <td><%= configuration.addition_details %></td>
+    <td><%= configuration.how_to_apply %></td>
+    <td><%= configuration.link %></td>
+    <td><%= configuration.save_html_blob %></td>
+    <td><%= configuration.save_html_file %></td>
+    <td><%= link_to 'Show', configuration %></td>
+    <td><%= link_to 'Edit', edit_configuration_path(configuration) %></td>
+    <td><%= link_to 'Destroy', configuration, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Configuration', new_configuration_path %>

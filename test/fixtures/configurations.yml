@@ -1,0 +1,73 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  company_name: MyText
+  ats: MyText
+  duns: MyText
+  map_frequency: MyText
+  map_day_of_week: MyText
+  date_created: 2011-07-09
+  date_modified: 2011-07-09
+  last_run: 2011-07-09
+  time_of_last_run: 2011-07-09 03:13:26
+  no_of_times_run: 1
+  first_time: false
+  has_next: false
+  job_listing_option: MyText
+  active: false
+  save_path: MyText
+  title: MyText
+  url: MyText
+  login: MyText
+  password: MyText
+  worker: MyText
+  create_csv: false
+  job_name: false
+  working_time: false
+  location: false
+  organization_name: false
+  department_creation: false
+  brieff_description: false
+  detailed_description: false
+  job_requirments: false
+  addition_details: false
+  how_to_apply: false
+  link: false
+  save_html_blob: false
+  save_html_file: false
+
+two:
+  company_name: MyText
+  ats: MyText
+  duns: MyText
+  map_frequency: MyText
+  map_day_of_week: MyText
+  date_created: 2011-07-09
+  date_modified: 2011-07-09
+  last_run: 2011-07-09
+  time_of_last_run: 2011-07-09 03:13:26
+  no_of_times_run: 1
+  first_time: false
+  has_next: false
+  job_listing_option: MyText
+  active: false
+  save_path: MyText
+  title: MyText
+  url: MyText
+  login: MyText
+  password: MyText
+  worker: MyText
+  create_csv: false
+  job_name: false
+  working_time: false
+  location: false
+  organization_name: false
+  department_creation: false
+  brieff_description: false
+  detailed_description: false
+  job_requirments: false
+  addition_details: false
+  how_to_apply: false
+  link: false
+  save_html_blob: false
+  save_html_file: false

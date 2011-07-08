@@ -1,4 +1,8 @@
 Crawler::Application.routes.draw do
+  resources :results
+
+  resources :configurations
+
   resources :csv_fields
 
   resources :jobs

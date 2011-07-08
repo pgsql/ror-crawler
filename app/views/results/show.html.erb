@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Configuration:</b>
+  <%= @result.configuration_id %>
+</p>
+
+<p>
+  <b>Date created:</b>
+  <%= @result.date_created %>
+</p>
+
+<p>
+  <b>Date modified:</b>
+  <%= @result.date_modified %>
+</p>
+
+<p>
+  <b>Expired:</b>
+  <%= @result.expired %>
+</p>
+
+<p>
+  <b>Job name:</b>
+  <%= @result.job_name %>
+</p>
+
+<p>
+  <b>Working title:</b>
+  <%= @result.working_title %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @result.location %>
+</p>
+
+<p>
+  <b>Organination name:</b>
+  <%= @result.organination_name %>
+</p>
+
+<p>
+  <b>Brieff description:</b>
+  <%= @result.brieff_description %>
+</p>
+
+<p>
+  <b>Job requirments:</b>
+  <%= @result.job_requirments %>
+</p>
+
+<p>
+  <b>Additional details:</b>
+  <%= @result.additional_details %>
+</p>
+
+<p>
+  <b>How to apply:</b>
+  <%= @result.how_to_apply %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @result.link %>
+</p>
+
+<p>
+  <b>Html blob:</b>
+  <%= @result.html_blob %>
+</p>
+
+
+<%= link_to 'Edit', edit_result_path(@result) %> |
+<%= link_to 'Back', results_path %>

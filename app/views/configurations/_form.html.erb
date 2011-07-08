@@ -1,0 +1,153 @@
+<%= form_for(@configuration) do |f| %>
+  <% if @configuration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@configuration.errors.count, "error") %> prohibited this configuration from being saved:</h2>
+
+      <ul>
+      <% @configuration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_name %><br />
+    <%= f.text_area :company_name %>
+  </div>
+  <div class="field">
+    <%= f.label :ats %><br />
+    <%= f.text_area :ats %>
+  </div>
+  <div class="field">
+    <%= f.label :duns %><br />
+    <%= f.text_area :duns %>
+  </div>
+  <div class="field">
+    <%= f.label :map_frequency %><br />
+    <%= f.text_area :map_frequency %>
+  </div>
+  <div class="field">
+    <%= f.label :map_day_of_week %><br />
+    <%= f.text_area :map_day_of_week %>
+  </div>
+  <div class="field">
+    <%= f.label :date_created %><br />
+    <%= f.date_select :date_created %>
+  </div>
+  <div class="field">
+    <%= f.label :date_modified %><br />
+    <%= f.date_select :date_modified %>
+  </div>
+  <div class="field">
+    <%= f.label :last_run %><br />
+    <%= f.date_select :last_run %>
+  </div>
+  <div class="field">
+    <%= f.label :time_of_last_run %><br />
+    <%= f.time_select :time_of_last_run %>
+  </div>
+  <div class="field">
+    <%= f.label :no_of_times_run %><br />
+    <%= f.text_field :no_of_times_run %>
+  </div>
+  <div class="field">
+    <%= f.label :first_time %><br />
+    <%= f.check_box :first_time %>
+  </div>
+  <div class="field">
+    <%= f.label :has_next %><br />
+    <%= f.check_box :has_next %>
+  </div>
+  <div class="field">
+    <%= f.label :job_listing_option %><br />
+    <%= f.text_area :job_listing_option %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :save_path %><br />
+    <%= f.text_area :save_path %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_area :url %>
+  </div>
+  <div class="field">
+    <%= f.label :login %><br />
+    <%= f.text_area :login %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_area :password %>
+  </div>
+  <div class="field">
+    <%= f.label :worker %><br />
+    <%= f.text_area :worker %>
+  </div>
+  <div class="field">
+    <%= f.label :create_csv %><br />
+    <%= f.check_box :create_csv %>
+  </div>
+  <div class="field">
+    <%= f.label :job_name %><br />
+    <%= f.check_box :job_name %>
+  </div>
+  <div class="field">
+    <%= f.label :working_time %><br />
+    <%= f.check_box :working_time %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.check_box :location %>
+  </div>
+  <div class="field">
+    <%= f.label :organization_name %><br />
+    <%= f.check_box :organization_name %>
+  </div>
+  <div class="field">
+    <%= f.label :department_creation %><br />
+    <%= f.check_box :department_creation %>
+  </div>
+  <div class="field">
+    <%= f.label :brieff_description %><br />
+    <%= f.check_box :brieff_description %>
+  </div>
+  <div class="field">
+    <%= f.label :detailed_description %><br />
+    <%= f.check_box :detailed_description %>
+  </div>
+  <div class="field">
+    <%= f.label :job_requirments %><br />
+    <%= f.check_box :job_requirments %>
+  </div>
+  <div class="field">
+    <%= f.label :addition_details %><br />
+    <%= f.check_box :addition_details %>
+  </div>
+  <div class="field">
+    <%= f.label :how_to_apply %><br />
+    <%= f.check_box :how_to_apply %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br />
+    <%= f.check_box :link %>
+  </div>
+  <div class="field">
+    <%= f.label :save_html_blob %><br />
+    <%= f.check_box :save_html_blob %>
+  </div>
+  <div class="field">
+    <%= f.label :save_html_file %><br />
+    <%= f.check_box :save_html_file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

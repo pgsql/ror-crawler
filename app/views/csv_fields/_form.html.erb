@@ -1,0 +1,25 @@
+<%= form_for(@csv_field) do |f| %>
+  <% if @csv_field.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@csv_field.errors.count, "error") %> prohibited this csv_field from being saved:</h2>
+
+      <ul>
+      <% @csv_field.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :job_id %><br />
+    <%= f.text_field :job_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

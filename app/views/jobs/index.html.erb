@@ -1,0 +1,31 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <tr>
+    <th>Active</th>
+    <th>Save path</th>
+    <th>Title</th>
+    <th>Login</th>
+    <th>Worker</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.active %></td>
+    <td><%= job.save_path %></td>
+    <td><%= job.title %></td>
+    <td><%= job.login %></td>
+    <td><%= job.worker %></td>
+    <td><%= link_to 'Show', job %></td>
+    <td><%= link_to 'Edit', edit_job_path(job) %></td>
+    <td><%= link_to 'Destroy', job, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Job', new_job_path %>

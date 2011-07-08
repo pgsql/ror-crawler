@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @csv_field.title %>
+</p>
+
+<p>
+  <b>Job:</b>
+  <%= @csv_field.job_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_csv_field_path(@csv_field) %> |
+<%= link_to 'Back', csv_fields_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Active:</b>
+  <%= @job.active %>
+</p>
+
+<p>
+  <b>Save path:</b>
+  <%= @job.save_path %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @job.title %>
+</p>
+
+<p>
+  <b>Login:</b>
+  <%= @job.login %>
+</p>
+
+<p>
+  <b>Worker:</b>
+  <%= @job.worker %>
+</p>
+
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

@@ -95,6 +95,10 @@ class Worker
     path = @job[:save_path]
     log "--------------\nsaving to: "+File.expand_path(path)+"\n\n"
     dirs = File.dirname(path)
+#    puts "*************** path.inspect ****************"
+#    puts path.inspect
+#    puts "*************** @data.inspect ****************"
+#    puts @data.inspect
     #make absent dirs in the path
     File.makedirs(dirs)
     f = File.new path, "w"

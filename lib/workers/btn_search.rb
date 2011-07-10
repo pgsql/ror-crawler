@@ -41,18 +41,28 @@ class BTNSearch < ATSWorker
         how_to_apply = html2csv datapage.parser.xpath('/html/body/form/span[2]/div/div[3]/span/table//tr[4]/td/table//tr/td/table//tr/td[2]/table//tr[29]/td[3]').inner_html
         link = datapage.uri
 
-        csv_row.add "Job Name", job_name
-        csv_row.add "Working Title", working_title
-        csv_row.add "Location", location
-        csv_row.add "Organization Name", organization_name
-        csv_row.add "Department Description", department_description
-        csv_row.add "Brief Description", brief_description
-        csv_row.add "Detailed Description", detailed_description
-        csv_row.add "Job Requirements", job_requirements
-        csv_row.add "Additional Details", additional_details
-        csv_row.add "How To Apply", how_to_apply
-        csv_row.add "Link", link.to_s
+#        csv_row.add "Job Name", job_name
+#        csv_row.add "Working Title", working_title
+#        csv_row.add "Location", location
+#        csv_row.add "Organization Name", organization_name
+#        csv_row.add "Department Description", department_description
+#        csv_row.add "Brief Description", brief_description
+#        csv_row.add "Detailed Description", detailed_description
+#        csv_row.add "Job Requirements", job_requirements
+#        csv_row.add "Additional Details", additional_details
+#        csv_row.add "How To Apply", how_to_apply
+#        csv_row.add "Link", link.to_s
+#        "Department Description", department_description,
+#        "Detailed Description", detailed_description,
+
+        Result.create(:job_name => job_name, :working_title => working_title,:location  => location, :organination_name => organization_name,
+        :organination_name => organization_name, :brieff_description => brief_description,
+        :job_requirments => job_requirements,
+        :additional_details => additional_details, :how_to_apply => how_to_apply,
+      :link => link.to_s)
+
         @rows.push csv_row
+
         parsed_count +=1
         log "parsed #{job_name}"
         plain_data_to_be_saved = datapage.parser.xpath '//*[@id="Description"]'

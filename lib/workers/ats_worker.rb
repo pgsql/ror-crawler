@@ -8,14 +8,15 @@ class ATSWorker < CSVMaker
     path = @job[:save_path]
     dirs = File.dirname(path)
     path = dirs+"/"+file_name+".html"
-    data.gsub! /<img[^<]*>/, ""
-    data = "<html>\n<body>\n<a href=\"#{link}\">#{file_name}</a>\n"+data+"\n</body>\n</html>"
-    log "saving page to: "+File.expand_path(path)+"\n--------------\n"
+#    data.gsub! /<img[^<]*>/, ""
+#    data = "<html>\n<body>\n<a href=\"#{link}\">#{file_name}</a>\n"+data+"\n</body>\n</html>"
+    log "saving page to DB: "+File.expand_path(path)+"\n--------------\n"
+    Result.create(:job_name => file_name, :html_blob => data, :link => link)
 
-    File.makedirs(dirs)
-    f = File.new path, "w"
-    cnt = f.write data
-    f.close
+#    File.makedirs(dirs)
+#    f = File.new path, "w"
+#    cnt = f.write data
+#    f.close
   end
 
   #"next" link has different format of "onclick" attribute

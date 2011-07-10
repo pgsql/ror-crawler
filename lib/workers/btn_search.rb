@@ -69,8 +69,8 @@ class BTNSearch < ATSWorker
         save_page job_name, plain_data_to_be_saved.to_html, link.to_s
         #break
       end
-      @data = to_csv
-      save_data
+      #@data = to_csv
+      #save_data
       log "saved #{parsed_count} items in total"
       next_link = results.parser.css 'span#JobSearchTable table tr td table.x1i tr td table tr td a.x41'
       break if next_link.nil? || (pagenum > 1 && next_link.length < 2)
@@ -87,6 +87,6 @@ class BTNSearch < ATSWorker
       pagenum +=1
     end
     log "Done!"
-    return to_csv
+    #return to_csv
   end
 end

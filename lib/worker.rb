@@ -17,7 +17,8 @@ class Worker
     @agent.history.max_size=3
 
     @agent.open_timeout = 100000 #sometimes even this huge timeout is not enough...
-    if job[:login] #job[:login] -- described in ats.rb
+    
+    if !job[:login].blank? #job[:login] -- described in ats.rb
       url = job[:login][:url]
       log "Opening #{url} as a start/login page"
       begin
@@ -53,7 +54,6 @@ class Worker
   #open base data page and perform parsing
   #calls parse method of its subclass
   def run
-    log "Parsing..."
     if @job[:url]
       url = @job[:url]
       log "Opening #{url} as a data page"
@@ -76,7 +76,8 @@ class Worker
     save_data if @job[:save_path]
 
   rescue Exception=>e
-    puts "Failed to parse URL '#{url}', exception=>"+e.message
+    puts "Base Worker"
+    puts " Failed to parse URL '#{url}', exception=>"+e.message
   end
 
   #this must be overriden in subclasses

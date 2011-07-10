@@ -1,6 +1,5 @@
 #In case of any problem contact the developer: yuriy.horobey@gmail.com
 #or http://sminit.com (use current navigation to find contact info)
-puts ('../../config/environment')
 require File.expand_path('config/environment')
 ##########################  CONFIGURATIONS ##########################################################
 # Here, and everywhere else -- edit only parts between double quotes
@@ -230,20 +229,31 @@ Dir[File.expand_path(File.dirname(__FILE__)+"/lib/workers/*.rb")].each do |file|
 end
 
 #go through all the jobs and launch each of them
-jobs.each do |job|
-  if job[:active]
-    begin
-      worker_class = Module.const_get(job[:worker].to_s)
+Configuration.activivated.each do |job|
+  begin
+    worker_class = Module.const_get(job.worker.to_s)
+    puts job
+    worker = worker_class.new job
 
-      #some IDEs here will complain that "default constructor has no parameters"
-      #disregard -- we use our custom constructors -- they take parameters
-      worker = worker_class.new job
-      worker.run
-    rescue Exception => e
+    worker.run
+  rescue Exception => e
       puts "Unable to start parser: #{e.message}"
-    end
-  else
-    puts "Skipping inactive job: #{job[:title]}"
   end
 end
+#jobs.each do |job|
+#  if job[:active]
+#    begin
+#      worker_class = Module.const_get(job[:worker].to_s)
+#
+#      #some IDEs here will complain that "default constructor has no parameters"
+#      #disregard -- we use our custom constructors -- they take parameters
+#      worker = worker_class.new job
+#      worker.run
+#    rescue Exception => e
+#      puts "Unable to start parser: #{e.message}"
+#    end
+#  else
+#    puts "Skipping inactive job: #{job[:title]}"
+#  end
+#end
 
